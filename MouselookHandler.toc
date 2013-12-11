@@ -8,6 +8,7 @@
 ## X-Embeds: Ace3
 
 embeds.xml
+i18n.xml
 
 MouselookHandler.lua
 
