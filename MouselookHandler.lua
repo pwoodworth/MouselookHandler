@@ -14,6 +14,7 @@ setfenv(1, MouselookHandler)
 local MouselookHandler = _G.MouselookHandler
 local LibStub = _G.LibStub
 
+local L = LibStub("AceLocale-3.0"):GetLocale("MouselookHandler", true)
 local AceConfig = LibStub("AceConfig-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
@@ -259,29 +260,9 @@ local function getEventList(info)
   return db.profile.eventList
 end
 
-local deferText = [[When clicking and holding any mouse button while ]]
-  .. [[mouselooking, but only releasing it after stopping mouselooking, the ]]
-  .. [[mouse button's binding won't be run on release.]] .. '\n'
-  .. [[    For example, consider having "BUTTON1" bound to "STRAFELEFT". ]]
-  .. [[Now, when mouselook is active and the left mouse button is pressed ]]
-  .. [[and held, stopping mouselook will result in releasing the mouse ]]
-  .. [[button to no longer have it's effect of cancelling strafing. ]]
-  .. [[Instead, the player will be locked into strafing left until ]]
-  .. [[clicking the left mouse button again.]] .. '\n'
-  .. [[    This setting will cause slightly less obnoxious behavior: it will ]]
-  .. [[defer stopping mouselook until all mouse buttons have been released.]]
-
-local bindText = [[Assign the "STRAFELEFT" and "STRAFERIGHT" actions to ]]
-  .. [["BUTTON1" (left mouse button) and "BUTTON2" (right mouse button), ]]
-  .. [[respectively.]] .. '\n'
-  .. [[    While not mouselooking through this Addon those bindings don't ]]
-  .. [[apply.]]
-
-local spellTargetingOverrideText = [[Disable mouselook while a spell is awaiting a target.]]
-
 local options = {
   type = "group",
-  name = "MouselookHandler Options",
+  name = L["MouselookHandler Options"],
   handler = MouselookHandler,
   childGroups = "tree",
   args = {
@@ -297,7 +278,7 @@ local options = {
         },
         deferDescription = {
           type = "description",
-          name = deferText,
+          name = L["deferText"],
           fontSize = "medium",
           order = 1,
         },
@@ -316,7 +297,7 @@ local options = {
         },
         bindDescription = {
           type = "description",
-          name = bindText,
+          name = L["bindText"],
           fontSize = "medium",
           order = 4,
         },
@@ -335,7 +316,7 @@ local options = {
         },
         spellTargetingOverrideDescription = {
           type = "description",
-          name = spellTargetingOverrideText,
+          name = L["spellTargetingOverrideText"],
           fontSize = "medium",
           order = 7,
         },
