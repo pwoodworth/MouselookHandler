@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("MouselookHandler", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("MouselookHandler", "enUS", true, true)
 if L then
 
 L["deferText"] = [[When clicking and holding any mouse button while ]]
